@@ -1,0 +1,51 @@
+:root {
+    --border-color: rgb(185, 185, 185);
+    --border-radius: 6px;
+    --border-bg-radius: 5px;
+    --table-color: rgb(239, 239, 239);
+    --line-color: rgb(220, 220, 220);
+    --black-color: #333;
+    --caption-color: #3B5998;
+    color: var(--black-color);
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.datatable {
+    border: 0.25px solid var(--line-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    width: 100%;
+}
+
+.caption {
+    font-size: 10pt;
+    padding: 0.25rem;
+    padding-left: 5pt;
+    background-color: var(--line-color);
+    border-top-right-radius: var(--border-bg-radius);
+    border-top-left-radius: var(--border-bg-radius);
+}
+
+table {
+    font-size: 10pt;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding-top: 3pt;
+    padding-bottom: 3pt;
+    border: 1px solid var(--line-color);
+    text-align: center;
+}
+
+tbody tr:nth-child(2n-1) {
+    background-color: var(--table-color);
+}
+
+
+main {
+    margin-right: 21rem;
+}
+

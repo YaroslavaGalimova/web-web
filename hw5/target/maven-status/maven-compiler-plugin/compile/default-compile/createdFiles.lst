@@ -1,0 +1,6 @@
+ru\itmo\wp\web\page\IndexPage.class
+ru\itmo\wp\web\StaticFilter.class
+ru\itmo\wp\web\page\misc\HelpPage.class
+ru\itmo\wp\web\page\NotFoundPage.class
+ru\itmo\wp\web\exception\RedirectException.class
+ru\itmo\wp\web\page\TicTacToePage.class
