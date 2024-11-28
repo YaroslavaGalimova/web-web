@@ -1,0 +1,48 @@
+:root {
+    --background-color: #f9f9f9;
+}
+
+.profile {
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile .login {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--caption-color);
+}
+
+.profile .id {
+    font-size: 16px;
+    color: #666;
+}
+
+.profile .creationTime {
+    font-size: 14px;
+    color: #999;
+}
+
+.no_such_user {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: red;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+.no_such_user img {
+    max-width: 40%;
+    height: auto;
+    margin-left: 10px;
+    border-radius: var(--border-radius);
+}
+

@@ -26,7 +26,7 @@ public class IndexPage extends Page {
     @GetMapping("/logout")
     public String logout(HttpSession httpSession) {
         unsetUser(httpSession);
-        putMessage(httpSession, "Good bye!");
+        putMessage(httpSession, "Goodbye!");
         return "redirect:/";
     }
 }

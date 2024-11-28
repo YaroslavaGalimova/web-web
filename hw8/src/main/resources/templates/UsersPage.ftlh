@@ -9,6 +9,7 @@
                 <th>Id</th>
                 <th>Login</th>
                 <th>Created</th>
+                <th>Status</th>
             </tr>
             </thead>
             <tbody>
@@ -24,6 +25,20 @@
                     <td class="id">${user.id}</td>
                     <td class="login">${user.login}</td>
                     <td class="creationTime">${user.creationTime}</td>
+                    <td>
+                        <form method="post" action="">
+                            <input type="hidden" name="userId" value="${user.id}">
+                            <input type="hidden" name="status" value="${user.disabled?string('false', 'true')}">
+                            <div class="button-field">
+                                <#if user.disabled>
+                                    <#assign status="Enable"/>
+                                <#else>
+                                    <#assign status="Disable"/>
+                                </#if>
+                                <input type="submit" value="${status}">
+                            </div>
+                        </form>
+                    </td>
                 </tr>
                 </#list>
             </#if>

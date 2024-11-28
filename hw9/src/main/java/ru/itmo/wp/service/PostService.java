@@ -17,4 +17,13 @@ public class PostService {
     public List<Post> findAll() {
         return postRepository.findAllByOrderByCreationTimeDesc();
     }
+
+    public void save(Post post) {
+        postRepository.save(post);
+    }
+
+    public Post findById(Long id) {
+        return id == null ? null : postRepository.findById(id).orElse(null);
+    }
+
 }

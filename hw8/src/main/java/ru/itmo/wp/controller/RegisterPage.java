@@ -17,7 +17,6 @@ import javax.validation.Valid;
 
 @Controller
 public class RegisterPage extends Page {
-    private final UserService userService;
     private final UserCredentialsRegisterValidator userCredentialsRegisterValidator;
 
     public RegisterPage(UserService userService, UserCredentialsRegisterValidator userCredentialsRegisterValidator) {

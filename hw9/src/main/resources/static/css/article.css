@@ -25,6 +25,21 @@ main article .body p:last-child {
     margin: 0;
 }
 
+.tags {
+    margin-top: 3pt;
+    display: flex;
+}
+
+.one_tag {
+    margin-right: 1pt;
+    padding: 1pt 1pt;
+    display: inline-block;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    font-style: italic;
+    background-color: rgb(206, 234, 242);
+}
+
 main article .attachment {
     padding: 0;
     margin: 0.5rem 0 0 0;

@@ -27,6 +27,9 @@ public class User {
     @OrderBy("creationTime desc")
     private List<Post> posts;
 
+    @NotNull
+    private boolean disabled = false;
+
     @CreationTimestamp
     private Date creationTime;
 

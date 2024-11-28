@@ -16,10 +16,10 @@
     </head>
     <body>
     <header>
-        <a href="/"><img src="<@spring.url 'img/logo.png'/>" alt="Codeforces" title="Codeforces"/></a>
+        <a href="/"><img src="<@spring.url '/img/logo.png'/>" alt="Codeforces" title="Codeforces"/></a>
         <div class="languages">
-            <a href="#"><img src="<@spring.url 'img/gb.png'/>" alt="In English" title="In English"/></a>
-            <a href="#"><img src="<@spring.url 'img/ru.png'/>" alt="In Russian" title="In Russian"/></a>
+            <a href="#"><img src="<@spring.url '/img/gb.png'/>" alt="In English" title="In English"/></a>
+            <a href="#"><img src="<@spring.url '/img/ru.png'/>" alt="In Russian" title="In Russian"/></a>
         </div>
         <div class="enter-or-register-box">
             <#if user??>
@@ -41,25 +41,35 @@
     </header>
     <div class="middle">
         <aside>
-            <section>
-                <div class="header">
+            <#if user??>
+                <div class="add_notice">
+                    <a href="<@spring.url '/addNotice'/>">Add notice</a>
+                </div>
+            </#if>
+            <#if notices??>
+                <#--  <div class="header">
                     Pay attention
-                </div>
-                <div class="body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus enim facere impedit nobis,
-                    nulla placeat quam suscipit unde voluptatibus.
-                </div>
-                <div class="footer">
-                    <a href="#">View all</a>
-                </div>
-            </section>
+                </div>  -->
+                <#list notices?reverse as notice>
+                    <section>
+                        <div class="body">
+                            ${notice.content}
+                        </div>
+                        <div class="footer">
+                            <a href="<@spring.url '/img/no_href.png'/>">View all</a>
+                            <div class="sidebar_notice_id">id: ${notice.id}</div>
+                            <div class="sidebar_notice_ct">${notice.creationTime}</div>
+                        </div>
+                    </section>
+                </#list>
+            </#if>
         </aside>
         <main>
             <#nested/>
         </main>
     </div>
     <footer>
-        <a href="/">Ejudge</a> &copy; 2077 by Mike Mirzayanov
+        <a href="/">Catforces</a> &copy; 2024 by Mike Mirzayanov and ~чуть-чуть~ Yaroslava Galimova
     </footer>
     <script>
         $(function () {

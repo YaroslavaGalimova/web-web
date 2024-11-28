@@ -3,6 +3,8 @@ package ru.itmo.wp.form.validator;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+
+import ru.itmo.wp.domain.User;
 import ru.itmo.wp.form.UserCredentials;
 import ru.itmo.wp.service.UserService;
 
@@ -21,9 +23,13 @@ public class UserCredentialsEnterValidator implements Validator {
     public void validate(Object target, Errors errors) {
         if (!errors.hasErrors()) {
             UserCredentials enterForm = (UserCredentials) target;
-            if (userService.findByLoginAndPassword(enterForm.getLogin(), enterForm.getPassword()) == null) {
+            User user = userService.findByLoginAndPassword(enterForm.getLogin(), enterForm.getPassword());
+            if (user == null) {
                 errors.rejectValue(
                         "password", "password.invalid-login-or-password", "Invalid login or password");
+            }
+            if (user.isDisabled()) {
+                errors.rejectValue("login", "login.user-disabled", "This person is disabled!");
             }
         }
     }

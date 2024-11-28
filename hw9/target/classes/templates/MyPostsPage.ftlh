@@ -2,6 +2,6 @@
 
 <@c.page>
 <#list user.posts as post>
-    <@c.post post=post/>
+    <@c.post post/>
 </#list>
 </@c.page>

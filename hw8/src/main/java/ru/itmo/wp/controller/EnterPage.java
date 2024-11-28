@@ -17,7 +17,6 @@ import javax.validation.Valid;
 
 @Controller
 public class EnterPage extends Page {
-    private final UserService userService;
     private final UserCredentialsEnterValidator userCredentialsEnterValidator;
 
     public EnterPage(UserService userService, UserCredentialsEnterValidator userCredentialsEnterValidator) {

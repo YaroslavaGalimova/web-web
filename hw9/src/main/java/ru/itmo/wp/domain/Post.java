@@ -6,7 +6,14 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /** @noinspection unused*/
 @Entity
@@ -33,6 +40,40 @@ public class Post {
 
     @CreationTimestamp
     private Date creationTime;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL) 
+    @OrderBy("creationTime desc") 
+    private List<Comment> comments;
+
+    @ManyToMany()
+    @JoinTable(name = "post_tag",
+            joinColumns = @JoinColumn(name = "post_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    @OrderBy("name")
+    private Set<Tag> tags;
+
+    public void addTag(Tag tag) {
+        if (tags == null) {
+            tags = new TreeSet<>();
+        }
+        tags.add(tag);
+    }
+
+    public Set<Tag> getTags() {
+        return tags;
+    }
+
+    public void addComment(Comment comment) {
+        if (comments == null) {
+            comments = new ArrayList<>();
+        }
+        comments.add(comment);
+        comment.setPost(this);
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
 
     public long getId() {
         return id;

@@ -96,16 +96,18 @@ footer {
 
 aside section {
     border: 1px solid var(--border-color);
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+    border-radius: var(--border-radius);
+    margin-bottom: 10pt;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-aside section .header {
+/* aside section .header {
     border-bottom: 1px solid var(--border-color);
     padding: 0.25rem;
     font-weight: bold;
     color: var(--caption-color);
-}
+} */
 
 aside section .header:before {
     content: "→";
@@ -119,6 +121,23 @@ aside section .footer {
     border-top: 1px solid var(--border-color);
     overflow: auto;
     padding: 0.25rem;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+aside section .footer .sidebar_notice_id{
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+    border-bottom: 1px solid var(--border-color);
+}
+
+aside section .footer .sidebar_notice_ct{
+    font-size: 14px;
+    font-style: italic;
+    color: #999;
+    border-bottom: 1px solid var(--border-color);
 }
 
 aside section .footer a {
@@ -137,4 +156,31 @@ aside section .footer a:after {
     border: 1px solid var(--message-border-color);
     background-color: var(--message-background-color);
     text-align: center;
+}
+
+img.index{
+    max-width: 40%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+}
+
+.add_notice {
+    text-align: center;
+    margin: 20px;
+}
+
+.add_notice a {
+    padding: 10px;
+    background-color: var(--message-border-color);
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add_notice a:hover {
+    background-color: var(--caption-color);
 }
