@@ -1,15 +1,19 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
-const EnterOrRegister = ({user, setUser, setPage}) => {
+const EnterOrRegister = ({login, setLogin}) => {
+
+    const router = useNavigate()
 
     return (
         <div className="enter-or-register-box">
-            {user
+            {login
                 ?
                 <>
-                    {user.login} | {user.name}
+                    {login}
                     <a href="#" onClick={(event) => {
-                        setUser(null)
+                        setLogin(null)
+                        localStorage.removeItem("jwt")
                         event.preventDefault()
                     }}>
                         Logout
@@ -17,16 +21,11 @@ const EnterOrRegister = ({user, setUser, setPage}) => {
                 </>
                 :
                 <>
-                    <a href="" onClick={(event) => {
-                        setPage('enter')
+                    <a href="#" onClick={(event) => {
+                        router("enter")
                         event.preventDefault()
                     }}>Enter</a>
-                    <a href="#" onClick={(event) => {
-                        setPage('register')
-                        event.preventDefault()
-                    }}>
-                        Register
-                    </a>
+                    <a href="#">Register</a>
                 </>
             }
         </div>

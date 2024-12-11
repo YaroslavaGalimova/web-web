@@ -1,25 +1,25 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
-const Navigation = ({user, setPage}) => {
+const Navigation = ({login}) => {
+
+    const router = useNavigate()
+
     return (
         <nav>
             <ul>
                 <li>
                     <a href="" onClick={(event) => {
-                        setPage('index')
                         event.preventDefault()
+                        router("/")
                     }}>Home</a>
                 </li>
-                <li><a href="" onClick={(event) => {
-                    setPage('users')
-                    event.preventDefault()
-                }}>Users</a></li>
-                {user
+                <li><a href="">Users</a></li>
+                {login
                     ?
                     <li>
                         <a href="" onClick={(event)=>{
                             event.preventDefault()
-                            setPage('writePost')
                         }}>
                             Write Post
                         </a>

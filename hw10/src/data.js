@@ -3,12 +3,14 @@ export const data = {
         {
             id: 1,
             title: 'Post 1',
-            text: 'abracadabra'
+            text: 'abracadabra',
+            comments: 1
         },
         {
             id: 2,
             title: 'Post 2',
-            text: 'abracadabra'
+            text: 'abracadabra',
+            comments: 1238092
         },
         {
             id: 3,

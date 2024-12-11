@@ -1,15 +1,29 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import comments from "../../../../assets/img/comments.png";
 
-const Index = () => {
+const Index = ({posts}) => {
+    const sortedPosts = useMemo(() => {
+        if (!posts)
+            return []
+        return posts.sort((a, b) => b.id - a.id)
+    }, [posts])
+
     return (
         <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eos maxime minima odit ratione tenetur veniam!
-            Animi autem deleniti dicta dolore et excepturi impedit inventore, ipsa iste iure laborum magni minus, modi
-            mollitia perferendis praesentium quae quos rem sequi sint sit temporibus vitae voluptatibus. Accusamus ad
-            adipisci alias aliquid aperiam, architecto consequatur culpa dicta et eveniet fuga fugit ipsa iure iusto
-            nobis numquam, omnis quam quasi qui quia reiciendis repudiandae sunt suscipit voluptate voluptatem. Ea,
-            eligendi enim, facilis ipsam molestias necessitatibus nesciunt nobis non perspiciatis provident quam, qui
-            quidem sit. A aspernatur commodi distinctio eum minima nam quia quo, voluptatibus.
+            {
+                sortedPosts.map((post, index) => (
+                    <article key={index}>
+                        <div class="title">{post.title}</div>
+                        <div class="body">{post.text}</div>
+                        <div class="footer">
+                            <div class="right">
+                                <img src={comments} title="Comments" alt="Comments"/>
+                                <a href="#">{post.comments === undefined ? 0 : post.comments}</a>
+                            </div>
+                        </div>
+                    </article>
+                ))
+            }
         </div>
     );
 };

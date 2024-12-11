@@ -1,0 +1,15 @@
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\form\validator\UserCredentialsEnterValidator.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\controller\handler\RestExceptionsHandler.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\domain\User.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\domain\Post.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\repository\PostRepository.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\repository\UserRepository.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\controller\JwtController.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\controller\PostController.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\service\UserService.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\WpApplication.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\service\JwtService.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\exception\ValidationException.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\controller\UserController.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\form\UserCredentials.java
+C:\Users\yaros\Desktop\ITMO\web-web\hw11\backend\src\main\java\ru\itmo\wp\service\PostService.java
