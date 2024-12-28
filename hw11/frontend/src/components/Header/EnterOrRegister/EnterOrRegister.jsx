@@ -14,6 +14,7 @@ const EnterOrRegister = ({login, setLogin}) => {
                     <a href="#" onClick={(event) => {
                         setLogin(null)
                         localStorage.removeItem("jwt")
+                        localStorage.removeItem("login")
                         event.preventDefault()
                     }}>
                         Logout
@@ -22,7 +23,7 @@ const EnterOrRegister = ({login, setLogin}) => {
                 :
                 <>
                     <a href="#" onClick={(event) => {
-                        router("enter")
+                        router("/enter")
                         event.preventDefault()
                     }}>Enter</a>
                     <a href="#">Register</a>

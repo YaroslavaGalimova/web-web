@@ -14,7 +14,16 @@ const Navigation = ({login}) => {
                         router("/")
                     }}>Home</a>
                 </li>
-                <li><a href="">Users</a></li>
+                {login
+                    ?
+                    <li>
+                        <a href=" " onClick={(event) => {
+                            event.preventDefault()
+                            router("/users")
+                        }}>Users</a>
+                    </li>
+                    : null
+                }
                 {login
                     ?
                     <li>

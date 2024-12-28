@@ -1,6 +1,10 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 const Section = ({post}) => {
+
+    const router = useNavigate()
+
     return (
         <section>
             <div className="header">
@@ -10,7 +14,10 @@ const Section = ({post}) => {
                 {post.text}
             </div>
             <div className="footer">
-                <a href="#">View all</a>
+                <a href=" " onClick={(event) => {
+                    event.preventDefault()
+                    router(`/posts/${post.id}`)
+                }}>View all</a>
             </div>
         </section>
     );

@@ -5,6 +5,9 @@ import React, {useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Application from "./Application";
 import axios from "axios";
+import Users from './components/Middle/Main/Users/Users';
+import NotFound from './components/Middle/Main/NotFound/NotFound';
+import Post from './components/Middle/Main/Post/Post';
 
 function App() {
 
@@ -24,17 +27,51 @@ function App() {
         }
     }, []);
 
+    const [users, setUsers] = useState(null)
+    // const array = useState(null)
+    // const user = array[0]
+    // const setUser = array[1]
+    useEffect(() => {
+        axios.get("/api/users").then((response)=>{
+            setUsers(response.data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+    }, [])
+
+    const [posts, setPosts] = useState(null)
+
+    useEffect(() => {
+        axios.get("/api/posts").then((response)=>{
+            setPosts(response.data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+    }, []);
+
     return (
         <div className="App">
             <BrowserRouter>
                 <Routes>
                     <Route
                         index={true}
-                        element={<Application setLogin={setLogin} login={login} page={<Index/>}/>}
+                        element={<Application setLogin={setLogin} posts={posts} login={login} page={<Index posts={posts}/>}/>}
                     />
                     <Route
                         exact path={'/enter'}
-                        element={<Application login={login} page={<Enter setLogin={setLogin}/>}/>}
+                        element={<Application setLogin={setLogin} posts={posts} login={login} page={<Enter setLogin={setLogin}/>}/>}
+                    />
+                    <Route
+                        exact path={'/users'}
+                        element={<Application setLogin={setLogin} posts={posts} login={login} page={<Users users={users} login={login}/>}/>}
+                    />
+                    <Route
+                        path={'/posts/:id'}
+                        element={<Application setLogin={setLogin} posts={posts} login={login} page={<Post posts={posts}/>}/>}
+                    />
+                    <Route 
+                        path={'*'} 
+                        element={<Application setLogin={setLogin} posts={posts} login={login} page={<NotFound/>}/>} 
                     />
                 </Routes>
             </BrowserRouter>

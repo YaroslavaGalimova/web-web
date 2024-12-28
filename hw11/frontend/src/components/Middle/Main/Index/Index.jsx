@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+const Index = ({posts}) => {
+    const sortedPosts = useMemo(() => {
+        if (!posts)
+            return []
+        return posts.sort((a, b) => a.id - b.id)
+    }, [posts])
 
-const Index = () => {
+    if (posts === null || posts.length === 0) {
+        return <div>No posts found. Wait...</div>;
+    }
+
     return (
         <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci asperiores culpa
-            cupiditate deserunt eaque esse eum explicabo molestiae nam nemo nisi, nostrum numquam, pariatur quae
-            quia quod sed vel veritatis voluptates. Aliquam distinctio facere illo laborum libero natus odio officia
-            officiis placeat, provident recusandae rem reprehenderit saepe tempore totam vero, voluptatibus? A ad
-            autem deleniti dignissimos ea error ex, inventore ipsum molestias omnis quae quam quo, repellat,
-            reprehenderit tenetur? A amet aperiam assumenda aut autem, delectus dicta eaque earum explicabo fugit in
-            iusto nulla quas quis quos ratione, rem saepe temporibus ut vitae. Dicta fugit libero maxime quas qui.
+            {
+                sortedPosts.map((post, index) => (
+                    <article key={index}>
+                        <div class="title">{post.title}</div>
+                        <div class="body">{post.text}</div>
+                    </article>
+                ))
+            }
         </div>
-    )
+    );
 };
 
 export default Index;

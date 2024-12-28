@@ -5,18 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import axios from "axios";
 
-function Application({page, login, setLogin}) {
-
-    const [posts, setPosts] = useState(null)
-
-    useEffect(() => {
-        axios.get("/api/posts").then((response)=>{
-            setPosts(response.data)
-        }).catch((error)=>{
-            console.log(error)
-        })
-    }, []);
-
+function Application({page, login, posts, setLogin}) {
 
     return (
         <div>

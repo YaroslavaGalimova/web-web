@@ -2,7 +2,7 @@ import React, {useCallback, useRef, useState} from 'react';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
-const Enter = ({ setLogin}) => {
+const Enter = ({setLogin}) => {
 
     const loginInputRef = useRef(null)
     const passwordInputRef = useRef(null)
